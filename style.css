@@ -1,0 +1,822 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #ffffff;
+}
+
+/* Navbar */
+header {
+    background: #1a1a1a;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span { color: #00d4ff; }
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover { color: #00d4ff; }
+
+/* About Section */
+.about-section {
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.about-container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.about-image img:hover {
+    box-shadow: 0 0 20px #00d4ff;
+    transform: scale(1.03);
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #00d4ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover { background: #0099cc; transform: translateY(-3px); }
+
+/*giapas ni sa pag add sa download resume*/
+.btn-link {
+    text-decoration: none;
+    display: inline-block; /* Keeps the button size correct */
+}
+/*giapas ni sa pag add sa download resume end here*/
+
+/* Portfolio Grids */
+.portfolio-section { padding: 80px 10%; }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background: #222;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+/* Animations */
+.grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00d4ff;
+    z-index: 10;
+}
+
+.video-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*.video-placeholder i { font-size: 3rem; margin-bottom: 10px; color: #00d4ff; }*/
+.video-placeholder i { font-size: 3rem; margin-bottom: 10px; color: #ffffff; }
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* FAQ Accordion */
+.faq-section { padding: 80px 20%; background: #151515; }
+
+details {
+    background: #222;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+summary { font-weight: bold; font-size: 1.1rem; outline: none; }
+
+details p { margin-top: 10px; color: #ccc; line-height: 1.6; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 50px;
+    background: #000;
+}
+
+.social-icons { margin-bottom: 20px; }
+
+.social-icons a {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover { color: #00d4ff; transform: translateY(-5px); }
+
+
+
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 10%;
+    background: #0f0f0f;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #ccc;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    color: #00d4ff;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 25px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+.send-btn {
+    width: 100%;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #00d4ff, #008fb3);
+    color: #000;
+}
+
+.send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+/*Contact Me last line*/
+
+
+/*New video sample changes only*/
+
+/* Thumbnail Styling */
+.video-card {
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+}
+
+.thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+.video-placeholder {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5); /* Darkens the thumb for text visibility */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+    color: #ffffff; /*gi apas para ang color sa text sa thumbnail mahimo white*/
+}
+
+
+/*gi apas para ang color sa text sa thumbnail mahimo white*/
+/* This targets the text (p tag) inside the video thumbnail placeholder */
+.video-placeholder p {
+    color: #ffffff;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* This ensures the play icon stays white as well */
+.video-placeholder i { 
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+    color: #ffffff; 
+}
+
+/*gi apas para ang color sa text sa thumbnail mahimo white ends here*/
+
+
+.video-card:hover .thumb-img {
+    transform: scale(1.1);
+}
+
+.video-card:hover .video-placeholder {
+    background: rgba(0, 212, 255, 0.3); /* Tint on hover */
+}
+
+/* Lightbox (The Popup) */
+.video-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Animation when clicked */
+.video-lightbox:target {
+    display: flex;
+    opacity: 1;
+}
+
+.video-box {
+    width: 80%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    background: #000;
+    border: 4px solid #00d4ff;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+}
+
+.video-lightbox:target .video-box {
+    transform: scale(1);
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 2001;
+}
+
+.close-btn:hover {
+    color: #00d4ff;
+}
+
+/*ends here*/
+
+
+/*new photo animation*/
+/* Photo Grid Item Hover Effect */
+.photo-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 212, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 2;
+}
+
+.photo-overlay i {
+    color: white;
+    font-size: 2rem;
+}
+
+.photo-card:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Lightbox Styling */
+.lightbox {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 3000;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Display the Lightbox when clicked */
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 85%;
+    border: 3px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.3s ease;
+}
+
+/* Close Button for Photos */
+.close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+.close-lightbox:hover {
+    color: #00d4ff;
+}
+
+/* Simple Entrance Animation */
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/*new photo animation ends here*/
+
+
+/*moving video left to right*/
+
+.scrolling-portfolio {
+    padding: 60px 0;
+    background: #0f0f0f;
+    overflow: hidden; /* Important to hide the extra videos */
+    /*moving left to right gi add ni para magduol ang 2 sections sa video */
+    padding-top: 60px;    /* Keep space at the top of the section */
+    padding-bottom: 0px;  /* REMOVE space at the bottom */
+    background: #0f0f0f;
+}
+
+.marquee {
+    width: 100%;
+    display: flex;
+}
+
+.track {
+    display: flex;
+    width: calc(300px * 8 + 160px); /* (Card width * total cards) + total gap */
+    gap: 20px;
+    animation: scroll 25s linear infinite;
+}
+
+/* Pause scrolling on hover */
+.track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-300px * 4 - 80px)); } /* Halfway point */
+}
+
+.video-card {
+    width: 300px;   /* Width of the video */
+    height: 220px; /* Height of the video */
+    background: #1a1a1a;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(10%); /* Looks like a static thumb initially - pa black and white sa vids*/
+    transition: filter 0.3s ease;
+}
+
+.video-info {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 5;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+/* Hover Effect to Play */
+.video-card:hover {
+    transform: scale(1.05);
+    border-color: #00d4ff;
+    z-index: 10;
+}
+
+.video-card:hover video {
+    filter: grayscale(0%);
+}
+
+/* ends here moving video*/
+
+
+/*moving left to right*/
+
+.moving-grid-section {
+    /*padding: 40px 0;*/
+    /*background: #0f0f0f;*/
+    overflow: hidden;
+    width: 100%;
+    /*moving left to right gi add ni para magduol ang 2 sections sa video */
+    padding-top: 20px;    /* Only a small gap between the two rows */
+    padding-bottom: 60px; /* Keep space at the bottom of the section */
+    background: #0f0f0f;
+}
+
+.marquee-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    /* Move from Left to Right */
+    animation: scrollRight 30s linear infinite;
+}
+
+/* Pause and scale on hover */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollRight {
+    0% {
+        /* Adjust this value based on total width of one set */
+        transform: translateX(calc(-100% / 2));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.v-card {
+    height: 250px; /* Same height for all */
+    width: 300px;  /* Default width */
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Three videos with different widths */
+.v-card.wide { width: 450px; }
+.v-card.narrow { width: 200px; }
+
+.v-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.v-card:hover {
+    transform: translateY(-10px);
+    border-color: #00d4ff;
+}
+
+.v-card:hover video {
+    opacity: 1;
+}
+
+/*ends here left to right*/
+
+
+/* ==========================================================================
+   Graphics Artistry Section Styles
+   ========================================================================== */
+
+.graphics-bg {
+    background: #111111; /* Slightly alternative tone to offset from the thumbnail section */
+}
+
+.graphic-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.graphic-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.graphic-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 212, 255, 0.4); /* Neon blue layout layer matching your portfolio theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 2;
+}
+
+.graphic-overlay i {
+    color: white;
+    font-size: 2rem;
+}
+
+/* Hover Zoom Mechanics */
+.graphic-card:hover .graphic-overlay {
+    opacity: 1;
+}
+
+.graphic-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Graphic Lightbox Setup */
+.g-lightbox {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 3000;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Activate target trigger on thumbnail click */
+.g-lightbox:target {
+    display: flex;
+}
+
+.g-lightbox-img {
+    max-width: 90%;
+    max-height: 85%;
+    border: 3px solid #00d4ff; /* Accent border matching GLENNSTUDIO styles */
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    animation: zoomIn 0.3s ease;
+}
+
+/* Close Link configuration */
+.close-g-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.close-g-lightbox:hover {
+    color: #00d4ff;
+}
+
+
+/* Addon to Video Editing Section -Arrow Toggle Section setup */
+
+/* Arrow Toggle Section setup */
+.extra-video {
+    display: none; /* Hides videos 5 to 8 initially */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* When active, the JavaScript will change display style block-level rules */
+.extra-video.show {
+    display: block;
+    opacity: 1;
+}
+
+.toggle-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.arrow-btn {
+    background: transparent;
+    border: 2px solid #333;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-btn:hover {
+    color: #00d4ff;
+    border-color: #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    transform: translateY(3px);
+}
+
+/* Arrow rotating transition style */
+.arrow-btn i {
+    transition: transform 0.4s ease;
+}
+
+.arrow-btn.active i {
+    transform: rotate(180deg); /* Flips the arrow upward when showing all videos */
+}
+
+
+/* Styling YouTube iframes inside marquee cards */
+.scrolling-portfolio .video-card iframe,
+.moving-grid-section .v-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none; /* Prevents play button clicks from disrupting marquee animation */
+    object-fit: cover;
+}
+
+
+/* Styling for Vertical Facebook Reel Popups */
+/* Center the Facebook Reel container inside the lightbox */
+.fb-reel-box {
+    position: relative;
+    width: 100%;
+    max-width: 350px; /* Fits standard vertical Reel width */
+    height: 80vh;      /* Takes up 80% of screen height */
+    max-height: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Force iframe to fit the aspect ratio */
+.fb-reel-box iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
